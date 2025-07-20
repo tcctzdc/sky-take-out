@@ -82,13 +82,13 @@ public class EmployeeServiceImpl implements EmployeeService {
         //设置默认密码123456 md5加密
         employee.setPassword(DigestUtils.md5DigestAsHex(PasswordConstant.DEFAULT_PASSWORD.getBytes()));
 
-        //设置创建时间、更新时间
-        employee.setCreateTime(LocalDateTime.now());
-        employee.setUpdateTime(LocalDateTime.now());
-
-        //设置创建人、更新人
-        employee.setCreateUser(BaseContext.getCurrentId());
-        employee.setUpdateUser(BaseContext.getCurrentId());
+//        //设置创建时间、更新时间
+//        employee.setCreateTime(LocalDateTime.now());
+//        employee.setUpdateTime(LocalDateTime.now());
+//
+//        //设置创建人、更新人
+//        employee.setCreateUser(BaseContext.getCurrentId());
+//        employee.setUpdateUser(BaseContext.getCurrentId());
 
         //插入数据
         employeeMapper.insert(employee);
@@ -143,8 +143,8 @@ public class EmployeeServiceImpl implements EmployeeService {
     public void update(EmployeeDTO employeeDTO) {
         Employee employe = new Employee();
         BeanUtils.copyProperties(employeeDTO, employe);
-        employe.setUpdateTime(LocalDateTime.now());
-        employe.setUpdateUser(BaseContext.getCurrentId());
+//        employe.setUpdateTime(LocalDateTime.now());
+//        employe.setUpdateUser(BaseContext.getCurrentId());
         employeeMapper.update(employe);
     }
 }
